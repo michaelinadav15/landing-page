@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>השקעות בלי חליפות | נדב מיכאלי — ליווי אישי להשקעות חכמות</title>
+  <meta name="description" content="לא צריך להיות כלכלן בשביל להשקיע. תוכנית ליווי אישית ב-6 מודולים שהופכת אותך למשקיע ETF שיודע בדיוק מה הוא עושה." />
+  <meta property="og:title" content="השקעות בלי חליפות | נדב מיכאלי" />
+  <meta property="og:description" content="ליווי אישי להשקעות פסיביות — מהתחלה ועד לתיק השקעות אמיתי." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-text">השקעות בלי חליפות</span>
+        <span class="logo-sub">עם נדב מיכאלי</span>
+      </div>
+      <a href="#signup" class="btn btn-primary btn-header">רוצה להתחיל ←</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>ליווי אישי · מתחילים עד מתקדמים · 6 מודולים</span>
+        </div>
+
+        <h1 class="hero-headline">
+          אתה יודע שצריך להשקיע.<br />
+          <span class="headline-accent">אתה פשוט לא יודע מאיפה להתחיל.</span>
+        </h1>
+
+        <p class="hero-sub">
+          בוא נדבר בגובה העיניים — בלי ז'רגון, בלי מנהלי קרנות עם אינטרסים, בלי תירוצים של "עוד קצת".
+          תוכנית ליווי ב-6 מודולים שהופכת אותך למשקיע שיודע בדיוק מה הוא עושה ולמה.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#process" class="btn btn-ghost btn-large">
+            תראה לי קודם את התוכנית ↓
+          </a>
+        </div>
+
+        <!-- מיני טופס לידים בהירו -->
+        <div class="hero-lead-form animate-on-scroll">
+          <p class="hero-form-label">השאר פרטים — אחזור אליך תוך יום עסקים</p>
+          <form class="hero-form-inner" id="hero-form" novalidate>
+            <div class="hero-form-fields">
+              <input type="text" name="name" id="hero-field-name" placeholder="שם מלא *" required class="hero-form-input" autocomplete="name" />
+              <input type="tel" name="phone" id="hero-field-phone" placeholder="מספר טלפון *" required class="hero-form-input" autocomplete="tel" dir="ltr" style="text-align:right" />
+              <button type="submit" class="btn btn-primary hero-form-btn" id="hero-submit-btn">
+                אני רוצה להתחיל ←
+              </button>
+            </div>
+            <p class="hero-form-note">בלי ספאם · בלי מכירה בכח · רק שיחת היכרות של 20 דקות</p>
+          </form>
+          <div id="hero-form-success" class="hero-form-success" style="display:none">
+            קיבלתי! אחזור אליך תוך יום עסקים 🙌
+          </div>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="proof-avatars">
+            <span class="avatar-circle av-1"></span>
+            <span class="avatar-circle av-2"></span>
+            <span class="avatar-circle av-3"></span>
+          </div>
+          <p>+150 אנשים כבר עברו את התהליך הזה</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PAIN ===== -->
+    <section class="pain-section" id="pain">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">אני יודע מה אתה חושב</div>
+        <h2 class="section-headline animate-on-scroll">
+          בחר את המשפט שהכי מדבר אליך
+        </h2>
+
+        <div class="pain-cards">
+          <div class="pain-card animate-on-scroll" data-delay="0">
+            <div class="pain-icon">😶</div>
+            <p class="pain-quote">
+              "אני יודע שצריך להשקיע, אבל אין לי מושג מאיפה להתחיל.
+              נראה לי שזה מסובך, מפחיד, ובטח לא בשבילי... אולי אחכה עוד קצת."
+            </p>
+            <div class="pain-label">המתחיל המוחלט</div>
+          </div>
+
+          <div class="pain-card animate-on-scroll" data-delay="150">
+            <div class="pain-icon">😬</div>
+            <p class="pain-quote">
+              "קראתי מאמרים, צפיתי בסרטונים, אפילו פתחתי חשבון — ואז קפאתי.
+              מה אם אעשה טעות? מה אם אבחר את הקרן הלא נכונה? עדיף לחכות שיהיה לי יותר ביטחון."
+            </p>
+            <div class="pain-label">היודע שנתקע</div>
+          </div>
+
+          <div class="pain-card animate-on-scroll" data-delay="300">
+            <div class="pain-icon">🤔</div>
+            <p class="pain-quote">
+              "משקיע כבר שנה-שנתיים — קנה כמה מניות, קרן פה, קרן שם.
+              אבל משהו מרגיש לא מסודר. אין לי אסטרטגיה אמיתית. אני בעצם מנחש."
+            </p>
+            <div class="pain-label">המשקיע המבולגן</div>
+          </div>
+        </div>
+
+        <div class="pain-bottom animate-on-scroll">
+          <p class="pain-bottom-text">
+            לא משנה איפה אתה — כולם מגיעים לאותה נקודה בסוף.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AGITATION ===== -->
+    <section class="agitation-section" id="agitation">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">למה "עוד קצת" עולה לך כסף</div>
+        <h2 class="section-headline animate-on-scroll">
+          כל שנה שאתה ממתין,<br />
+          <span class="text-accent-red">הכסף שלך מאבד ערך.</span>
+        </h2>
+
+        <div class="agitation-stats">
+          <div class="stat-block animate-on-scroll" data-delay="0">
+            <div class="stat-number">3%</div>
+            <div class="stat-label">האינפלציה השנתית הממוצעת שאוכלת את כל מה שאתה "חוסך" בעו"ש</div>
+          </div>
+          <div class="stat-block animate-on-scroll" data-delay="100">
+            <div class="stat-number">~10%</div>
+            <div class="stat-label">תשואה שנתית היסטורית של ה-S&P 500 — לאורך עשרות שנים ובמדד רחב</div>
+          </div>
+          <div class="stat-block animate-on-scroll" data-delay="200">
+            <div class="stat-number">₪280K</div>
+            <div class="stat-label">ההפרש בין להתחיל ב-25 לבין ב-35, על אותה השקעה חודשית זהה</div>
+          </div>
+        </div>
+
+        <div class="agitation-text-block animate-on-scroll">
+          <p>
+            המוח שלנו לא בנוי להבין ריבית דריבית. אנחנו מרגישים שיש עוד זמן, שזה לא דחוף, שקודם צריך "ללמוד יותר".
+            אבל המתמטיקה לא מחכה לך — כל חודש שעובר בלי השקעה הוא חודש שלעולם לא תחזיר.
+          </p>
+          <p class="agitation-em">
+            זה לא כדי להפחיד אותך. זה כדי שתבין למה "מחר" עולה לך הרבה יותר מכסף.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRIDGE ===== -->
+    <section class="bridge-section" id="bridge">
+      <div class="container">
+        <div class="bridge-line"></div>
+        <div class="bridge-content animate-on-scroll">
+          <div class="section-tag">אבל יש חדשות טובות</div>
+          <h2 class="section-headline">
+            השקעה פסיבית חכמה היא<br />
+            <span class="text-gradient">לא מדע טילים.</span>
+          </h2>
+          <p class="bridge-text">
+            ה-S&P 500 לא דורש ממך להיות Warren Buffett.
+            הוא דורש ממך שלושה דברים: הבנה בסיסית, אסטרטגיה פשוטה, ועמידה בלחץ כשהשוק יורד.
+          </p>
+          <p class="bridge-text">
+            את כל אחד מהשלושה — אפשר ללמוד. ואני כאן בשביל זה.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOLUTION ===== -->
+    <section class="solution-section" id="solution">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">התוכנית</div>
+        <h2 class="section-headline animate-on-scroll">
+          השקעות בלי חליפות —<br />תוכנית ליווי אישי
+        </h2>
+
+        <div class="solution-grid">
+          <div class="solution-text animate-on-scroll">
+            <p>
+              לא קורס מוקלט שתשכח ממנו אחרי שבועיים.
+              לא קבוצת פייסבוק עם ייעוץ מספקולנטים.
+              ולא יועץ פיננסי שמקבל עמלה על מה שימכור לך.
+            </p>
+            <p>
+              ליווי אישי, 1-על-1, שישה מודולים שנבנו כדי לדאוג שבסיום התהליך
+              יהיה לך תיק השקעות אמיתי שמתאים לך — ועם ידע שישאר איתך לכל החיים.
+            </p>
+            <ul class="solution-features">
+              <li><span class="check-icon">✓</span> פגישות אישיות עם נדב דרך זום</li>
+              <li><span class="check-icon">✓</span> חומרי עזר ותרגולים בין הפגישות</li>
+              <li><span class="check-icon">✓</span> ליווי בפתיחת חשבון ובביצוע הרכישה הראשונה</li>
+              <li><span class="check-icon">✓</span> גישה לקהילת בוגרי התוכנית</li>
+              <li><span class="check-icon">✓</span> מענה מהיר בווטסאפ בין הפגישות</li>
+            </ul>
+          </div>
+
+          <div class="solution-visual animate-on-scroll" data-delay="150">
+            <div class="solution-card-visual">
+              <div class="visual-label">6 מודולים</div>
+              <div class="visual-sublabel">ליווי אישי מוחלט</div>
+              <div class="visual-modules-preview">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+                <span>04</span>
+                <span>05</span>
+                <span>06</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">מה עוברים בתוכנית</div>
+        <h2 class="section-headline animate-on-scroll">6 מודולים. מאפס לתיק השקעות.</h2>
+
+        <div class="process-timeline">
+
+          <div class="module-card animate-on-scroll" data-delay="0">
+            <div class="module-number">01</div>
+            <div class="module-content">
+              <h3 class="module-title">בסיס פיננסי — מבינים את הכסף שלך</h3>
+              <p class="module-desc">
+                לפני שנדבר על מניות, נדבר על מה שיש לך. הכנסות, הוצאות, תזרים חודשי, וכמה אתה יכול להשקיע בלי לפגוע בחיים שלך.
+                מגיעים לנקודה שבה ברור: כמה שווה לשים בצד כל חודש — ומה יקרה לכסף הזה בעוד 10 שנים.
+              </p>
+              <div class="module-outcome">
+                <strong>יוצאים עם:</strong> תקציב חודשי מסודר + יעד חיסכון ריאלי שמתאים לחיים שלך
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card animate-on-scroll" data-delay="80">
+            <div class="module-number">02</div>
+            <div class="module-content">
+              <h3 class="module-title">עולם ההשקעות — בלי ז'רגון</h3>
+              <p class="module-desc">
+                מניות, אג"ח, קרנות נאמנות, ETF, קרנות מחקות — מה זה, איך זה עובד, ולמה רוב האנשים מבולבלים בגלל תקשורת פיננסית גרועה שמנסה לסבך אותם בכוונה.
+                בסוף המודול הזה לא תצטרך לגוגל שום מושג בסיסי.
+              </p>
+              <div class="module-outcome">
+                <strong>יוצאים עם:</strong> הבנה ברורה ומלאה של כלי ההשקעה הקיימים — ואיך להשתמש בהם נכון
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card animate-on-scroll" data-delay="160">
+            <div class="module-number">03</div>
+            <div class="module-content">
+              <h3 class="module-title">שיטת האינדקס — למה זה עובד וכולם מסתירים את זה</h3>
+              <p class="module-desc">
+                יש נתון שמנהלי הקרנות לא מאוד אוהבים לפרסם: 95% מהם מפסידים לאינדקס פשוט לאורך זמן.
+                מבינים למה זה קורה, מה זה אומר עליך, ואיך תוכל לנצל את זה בלי שום מאמץ מיוחד.
+              </p>
+              <div class="module-outcome">
+                <strong>יוצאים עם:</strong> הכרעה מבוססת נתונים — S&P 500 או MSCI World (או שניהם), ולמה
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card animate-on-scroll" data-delay="240">
+            <div class="module-number">04</div>
+            <div class="module-content">
+              <h3 class="module-title">פותחים חשבון ומשקיעים — ביחד, צעד אחר צעד</h3>
+              <p class="module-desc">
+                זה הצעד שרוב האנשים נתקעים בו לבד. בחירת בית השקעות, פתיחת חשבון מסחר, העברת כסף, ורכישת ה-ETF הראשון.
+                כל שלב — אני ליד. אפס ניחושים, אפס טעויות מיותרות.
+              </p>
+              <div class="module-outcome">
+                <strong>יוצאים עם:</strong> חשבון מסחר פעיל ורכישה ראשונה שבוצעה בפועל
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card animate-on-scroll" data-delay="320">
+            <div class="module-number">05</div>
+            <div class="module-content">
+              <h3 class="module-title">אסטרטגיה ארוכת טווח — בונים את "ספר ההוראות" שלך</h3>
+              <p class="module-desc">
+                DCA (Dollar Cost Averaging), איזון תיק, מה עושים עם דיבידנדים, איך מגיבים לשינויי שוק — בונים את התוכנית האישית שלך שתעבוד לך עשורים, בלי שתצטרך לשנות אותה בכל פעם שיש כותרת בכלכליסט.
+              </p>
+              <div class="module-outcome">
+                <strong>יוצאים עם:</strong> תוכנית השקעה כתובה לשנים הקרובות — מה קונים, מתי, ובכמה
+              </div>
+            </div>
+          </div>
+
+          <div class="module-card animate-on-scroll" data-delay="400">
+            <div class="module-number">06</div>
+            <div class="module-content">
+              <h3 class="module-title">מיינדסט — לשרוד ירידות ולהמשיך בלי לשבור</h3>
+              <p class="module-desc">
+                הכסף הגדול לא אובד מבחירות רעות — הוא אובד בפאניקה.
+                מכינים אותך פסיכולוגית לירידה של 30% בשוק, ללחצים מהסביבה, ולספקות שיגיעו.
+                כי האויב הגדול ביותר של המשקיע הוא עצמו.
+              </p>
+              <div class="module-outcome">
+                <strong>יוצאים עם:</strong> מסגרת מחשבתית שמגנה על ההחלטות שלך גם כשהשוק משתגע
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="process-cta animate-on-scroll">
+          <a href="#signup" class="btn btn-primary btn-large">רוצה לעבור את זה ←</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OUTCOMES ===== -->
+    <section class="outcomes-section" id="outcomes">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">מה יוצאים עם זה</div>
+        <h2 class="section-headline animate-on-scroll">
+          בסיום התוכנית אתה לא רק "יודע על השקעות".<br />
+          <span class="text-gradient">אתה משקיע.</span>
+        </h2>
+
+        <div class="outcomes-grid">
+          <div class="outcome-item animate-on-scroll" data-delay="0">
+            <div class="outcome-icon">💼</div>
+            <h3>תיק השקעות אמיתי</h3>
+            <p>לא סימולציה, לא "עוד שבוע אני פותח" — חשבון פעיל עם כסף שעובד בשבילך כבר עכשיו</p>
+          </div>
+          <div class="outcome-item animate-on-scroll" data-delay="80">
+            <div class="outcome-icon">🧭</div>
+            <h3>אסטרטגיה שנבנתה בשבילך</h3>
+            <p>לא ייעוץ כללי מהאינטרנט — תוכנית השקעה אישית שמתאימה להכנסה, לגיל ולמטרות שלך</p>
+          </div>
+          <div class="outcome-item animate-on-scroll" data-delay="160">
+            <div class="outcome-icon">🧠</div>
+            <h3>ידע שלא נעלם</h3>
+            <p>מבין למה אתה עושה מה שאתה עושה — אז כשהשוק יורד, אתה לא מוכר בפאניקה אלא ממשיך</p>
+          </div>
+          <div class="outcome-item animate-on-scroll" data-delay="240">
+            <div class="outcome-icon">⏱</div>
+            <h3>פחות מ-2 שעות בחודש</h3>
+            <p>כי השקעה פסיבית אמורה לעבוד בשבילך — לא להפוך לעבודה שנייה שמלחיצה אותך</p>
+          </div>
+          <div class="outcome-item animate-on-scroll" data-delay="320">
+            <div class="outcome-icon">🔇</div>
+            <h3>חיסון לרעש תקשורתי</h3>
+            <p>יודע להתעלם ממנהלי קרנות, מ"טיפים חמים" ומכותרות דרמטיות על "קריסת השוק"</p>
+          </div>
+          <div class="outcome-item animate-on-scroll" data-delay="400">
+            <div class="outcome-icon">📈</div>
+            <h3>ראיה ארוכת טווח</h3>
+            <p>מפסיק לחשוב על הרבעון הקרוב ומתחיל לחשוב בעשורים — ושם נמצא הכסף הגדול</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-inner animate-on-scroll">
+          <div class="about-photo-col">
+            <div class="about-photo-frame">
+              <!-- החלף את ה-placeholder בתמונה אמיתית: <img src="assets/nadav.jpg" alt="נדב מיכאלי" class="about-photo" /> -->
+              <div class="about-photo-placeholder">
+                <span>📸</span>
+                <span>תמונה של נדב</span>
+              </div>
+              <div class="about-photo-accent" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="about-text-col">
+            <div class="section-tag">מי זה נדב</div>
+            <h2 class="about-headline">לא יועץ. לא מנהל קרן. סתם מישהו שעשה את זה ומסביר איך.</h2>
+            <p>
+              לפני כמה שנים ישבתי עם חברים שלי וגיליתי שכולם חוששים מאותו דבר — להכניס כסף למשהו שהם לא מבינים.
+              כולם שמעו שצריך להשקיע, אף אחד לא ידע איך, וכולם ממשיכים לדחות.
+            </p>
+            <p>
+              אני לא כאן כדי למכור לך מוצר פיננסי, לגבות עמלה על ההשקעה שלך, או להרגיש חכם יותר ממך.
+              אני כאן כי שמעתי את עצמי מסביר את אותם דברים שוב ושוב — ורציתי לעשות את זה שיטתי, ברור, ובלי בולשיט.
+            </p>
+            <p>
+              אם אתה מחפש "טיפ חם" על מניה שתכפיל את עצמה — אני לא הכתובת.
+              אם אתה רוצה ללמוד לבנות תיק אינדקס מסודר ולהבין בדיוק מה אתה עושה ולמה — בוא נדבר.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">מה אומרים אחרי התוכנית</div>
+        <h2 class="section-headline animate-on-scroll">מה שאמרו אחרים</h2>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card animate-on-scroll" data-delay="0">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "חשבתי שאני צריך להיות איש מספרים בשביל להתחיל.
+              אחרי שלוש פגישות עם נדב הבנתי שפחדתי מהצל של עצמי.
+              היום יש לי תיק מסודר ואני מרגיש שאני שולט בכסף שלי."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>ד׳, 27</strong>
+                <span>מהנדס תוכנה, תל אביב</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card animate-on-scroll" data-delay="150">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "הייתי מבולבל לגמרי — קרן כאן, מניות שם, קריפטו קצת.
+              נדב עזר לי להבין שכל זה לא נחוץ. סידרנו הכל,
+              מכרנו מה שלא צריך, ובנינו משהו פשוט שעובד."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #FF6B6B, #fbbf24);"></div>
+              <div>
+                <strong>ש׳, 31</strong>
+                <span>מנהל שיווק, רמת גן</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card animate-on-scroll" data-delay="300">
+            <div class="testimonial-stars">★★★★★</div>
+            <blockquote class="testimonial-quote">
+              "ידעתי על ETF, ידעתי על אינדקסים — אבל לא עשיתי כלום עם זה שנה.
+              הפגישה עם נדב הייתה מה שגרמה לי סוף סוף לפתוח חשבון ולבצע
+              את הרכישה הראשונה. הוא פשוט גרם לזה להרגיש אפשרי."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: linear-gradient(135deg, #25D366, #6C63FF);"></div>
+              <div>
+                <strong>מ׳, 24</strong>
+                <span>סטודנטית + עובדת, ירושלים</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-tag animate-on-scroll">שאלות ותשובות</div>
+        <h2 class="section-headline animate-on-scroll">מה בדרך כלל שואלים</h2>
+
+        <div class="faq-list">
+
+          <div class="faq-item animate-on-scroll">
+            <button class="faq-question" aria-expanded="false">
+              <span>כמה כסף צריך כדי להתחיל להשקיע?</span>
+              <span class="faq-arrow">↓</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                בישראל ניתן להתחיל מ-200–300 ש"ח בחודש. אין "סכום מינימום" קסום —
+                ההרגל וההבנה חשובים הרבה יותר מהסכום הראשוני.
+                יחד נגדיר כמה מתאים לך על פי ההכנסה וההוצאות שלך.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="50">
+            <button class="faq-question" aria-expanded="false">
+              <span>האם זה לא מסוכן? יכול להפסיד הכל?</span>
+              <span class="faq-arrow">↓</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                ה-S&P 500 הפסיד "הכל" בדיוק אפס פעמים בהיסטוריה. ירד בחדות — כן, כמה פעמים.
+                חזר לשיאים חדשים — כן, בכל פעם. הסיכון הגדול יותר הוא לשמור כסף בעו"ש ולראות אותו נשחק.
+                על זה בדיוק מדברים במודול 06.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="100">
+            <button class="faq-question" aria-expanded="false">
+              <span>מה ההבדל בינך לבין יועץ פיננסי רגיל?</span>
+              <span class="faq-arrow">↓</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                יועץ פיננסי מסורתי מקבל עמלות על מוצרים שהוא מוכר לך — הגרסה שלו ל"ייעוץ" מושפעת מהאינטרס שלו.
+                אני גובה שכר קבוע עבור הזמן והידע שלי. לא מוכר לך שום מוצר. האינטרס שלי ושלך זהה לחלוטין.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="150">
+            <button class="faq-question" aria-expanded="false">
+              <span>כמה זמן לוקחת התוכנית?</span>
+              <span class="faq-arrow">↓</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                6 פגישות, בדרך כלל על פני 6–8 שבועות. בין הפגישות יש עבודה קצרה — בערך שעה לשבוע, לא יותר.
+                זה ליווי שמתאים לחיים שלך, לא קורס full-time שמצריך ממך כל מה שיש לך.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="200">
+            <button class="faq-question" aria-expanded="false">
+              <span>כבר יש לי תיק השקעות — עדיין רלוונטי?</span>
+              <span class="faq-arrow">↓</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                בהחלט. נבדוק יחד מה יש לך, מה כדאי לשנות ומה לשמר, ונבנה אסטרטגיה מסודרת
+                במקום ה"קניות הספורדיות" שמרגישות טוב על הרגע. כמה מהמשתתפים הכי מרוצים בתוכנית
+                הגיעו כ"משקיעים שנה וחצי" ויצאו עם תיק שהגיוני לראשונה.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SIGNUP ===== -->
+    <section class="signup-section" id="signup">
+      <div class="signup-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="signup-outer animate-on-scroll">
+
+          <!-- כותרת מחוץ לכרטיס -->
+          <div class="signup-header">
+            <div class="section-tag">בואו נתחיל</div>
+            <h2 class="signup-headline">
+              מוכן לדבר?<br />
+              שיחה ראשונה — בלי עלות, בלי לחץ.
+            </h2>
+            <p class="signup-sub">
+              השאר פרטים ואחזור אליך תוך יום עסקים.
+              אם נרגיש שזה מתאים — מתחילים. אם לא — לפחות יצאת עם כמה תובנות שוות.
+            </p>
+          </div>
+
+          <!-- כרטיס טופס בהיר -->
+          <div class="signup-card">
+
+            <div class="signup-whatsapp-cta">
+              <a href="https://wa.me/972XXXXXXXXX?text=היי%20נדב%2C%20ראיתי%20את%20התוכנית%20ורוצה%20לדעת%20יותר"
+                 class="btn btn-whatsapp btn-xlarge btn-full"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 id="whatsapp-cta">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                שלח הודעה בווטסאפ
+              </a>
+            </div>
+
+            <div class="signup-divider">
+              <span>או מלא פרטים ואחזור אליך</span>
+            </div>
+
+            <form class="signup-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div>
+                  <input type="text" name="name" id="field-name" placeholder="שם מלא *" required class="form-input" autocomplete="name" />
+                  <p class="form-error-msg">נא להזין שם מלא</p>
+                </div>
+                <div>
+                  <input type="tel" name="phone" id="field-phone" placeholder="מספר טלפון *" required class="form-input" autocomplete="tel" dir="ltr" style="text-align:right" />
+                  <p class="form-error-msg">נא להזין מספר טלפון תקין</p>
+                </div>
+              </div>
+              <select name="segment" id="field-segment" class="form-select" aria-label="מה מתאר אותך">
+                <option value="">מה הכי מתאר אותך? (לא חובה)</option>
+                <option value="מתחיל מאפס">מתחיל מאפס — לא מכיר כלום</option>
+                <option value="יודע אבל נתקעתי">יודע קצת אבל נתקעתי</option>
+                <option value="כבר משקיע">כבר משקיע, רוצה לשפר</option>
+              </select>
+              <button type="submit" class="btn btn-primary btn-large btn-full form-submit-btn" id="submit-btn">
+                שלח פרטים — אחזור אליך תוך יום עסקים ←
+              </button>
+              <p class="form-privacy">🔒 הפרטים נשמרים בפרטיות מלאה ולא מועברים לאף גורם חיצוני.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">השקעות בלי חליפות | נדב מיכאלי</div>
+      <p class="footer-legal">
+        האתר מספק מידע כללי לצורכי לימוד בלבד ואינו מהווה ייעוץ השקעות, ייעוץ מס או שיווק השקעות.
+        ההשקעה בשוק ההון כרוכה בסיכון לאובדן קרן. בדוק את ההתאמה לצרכיך לפני כל השקעה.
+      </p>
+      <a href="mailto:michaeli.nadav.15@gmail.com" class="footer-link">צור קשר</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
