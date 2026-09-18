@@ -506,7 +506,8 @@ body {
   color: var(--text-dark);
 }
 
-.white-section h2 {
+.white-section h2,
+.light-gray-section h2 {
   font-size: 2.7rem;
   font-weight: 900;
   margin-bottom: 20px;
@@ -2611,7 +2612,8 @@ html.a11y-reading-guide-on .a11y-reading-guide {
   /* Headline scale-down across every section — small enough that short/medium
      headlines fit on one line instead of wrapping awkwardly. */
   .dark-section h2,
-  .white-section h2 {
+  .white-section h2,
+  .light-gray-section h2 {
     font-size: 1.5rem;
     line-height: 1.3;
   }
