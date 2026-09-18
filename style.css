@@ -468,7 +468,7 @@ body {
 .dark-section {
   background-color: var(--bg-dark-section);
   color: #FFFFFF;
-  padding: 90px 0;
+  padding: 60px 0;
 }
 
 .pains-grid {
@@ -502,7 +502,7 @@ body {
 /* ===== WHITE SECTION ("BUT THAT'S NOT YOUR FAULT") ===== */
 .white-section {
   background-color: var(--bg-white);
-  padding: 90px 0;
+  padding: 60px 0;
   color: var(--text-dark);
 }
 
@@ -1992,7 +1992,7 @@ body {
 /* ===== PAIN SECTION — light background, bold red headline, marker highlights ===== */
 .pain-section-light {
   background-color: var(--bg-white);
-  padding: 90px 0;
+  padding: 60px 0;
   color: var(--text-dark);
   text-align: center;
 }
@@ -2017,7 +2017,7 @@ body {
 /* ===== LEAD BANNER (Form 2 / Final CTA) — one row, light fields, accent button ===== */
 .lead-banner-section {
   background-color: var(--bg-main);
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 /* Same two-part structure as the popup modal: a textured-blue header banner
@@ -2124,7 +2124,7 @@ body {
 /* ===== FEEDBACK SECTION — light gray, headline in blue banner, framed gallery ===== */
 .feedback-section-dark {
   background: var(--bg-main);
-  padding: 90px 0;
+  padding: 60px 0;
 }
 
 .feedback-frame,
