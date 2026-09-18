@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
           obs.unobserve(entry.target); // one-time only
         }
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px 300px 0px' });
 
     revealEls.forEach(el => revealObserver.observe(el));
   } else {
