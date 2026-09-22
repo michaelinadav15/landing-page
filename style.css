@@ -1387,6 +1387,9 @@ body {
 .lead-modal-body .round-text-field {
   padding: 13px 30px 13px 18px;
   font-size: 0.95rem;
+  background: var(--bg-main);
+  border: 1px solid #C7C7C7;
+  color: var(--text-dark);
 }
 
 .lead-modal-body .lead-banner-submit {
@@ -2117,7 +2120,7 @@ body {
 
 .lead-banner-card .round-text-field {
   background: var(--bg-main);
-  border: 1px solid #E0E0E0;
+  border: 1px solid #C7C7C7;
   color: var(--text-dark);
 }
 
