@@ -699,6 +699,11 @@ body {
   font-weight: 700;
 }
 
+.round-text-field:focus-visible {
+  outline: 3px solid var(--blue-primary) !important;
+  outline-offset: 2px !important;
+}
+
 /* Distinguished callout box for highlighted single-idea statements inside a
    larger paragraph block — modeled on the reference site's quote boxes:
    subtle background, colored accent border, no shouting colors or weight. */
