@@ -69,13 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
-            lead_id: leadId,
-            name: nameEl.value.trim(),
-            phone: phoneEl.value.trim(),
-            age: age,
-            location: location,
-            date: now.toLocaleDateString('he-IL'),
-            time: now.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' }),
+            'מזהה ליד': leadId,
+            'שם מלא': nameEl.value.trim(),
+            'טלפון': phoneEl.value.trim(),
+            'גיל': age,
+            'מקור הפנייה': location,
+            'תאריך': now.toLocaleDateString('he-IL'),
+            'שעה': now.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' }),
           }),
         });
 
@@ -100,19 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupLeadForm({
     formId: 'Lead-Form-2', nameId: 'Name-2', phoneId: 'Phone-2', ageId: 'Age-2',
-    btnId: 'submit-btn-2', msgId: 'success-msg-2', location: 'Lead Form 2 (After Pain Section)',
+    btnId: 'submit-btn-2', msgId: 'success-msg-2', location: 'טופס אמצע העמוד',
     onSuccess: openOnboardingQuiz,
   });
 
   setupLeadForm({
     formId: 'Lead-Form-Cta', nameId: 'Name-Cta', phoneId: 'Phone-Cta', ageId: 'Age-Cta',
-    btnId: 'submit-btn-cta', msgId: 'success-msg-cta', location: 'Footer CTA Form',
+    btnId: 'submit-btn-cta', msgId: 'success-msg-cta', location: 'טופס תחתית העמוד',
     onSuccess: openOnboardingQuiz,
   });
 
   setupLeadForm({
     formId: 'Lead-Form-Modal', nameId: 'Name-Modal', phoneId: 'Phone-Modal', ageId: 'Age-Modal',
-    btnId: 'submit-btn-modal', msgId: 'success-msg-modal', location: 'Hero CTA Popup Modal',
+    btnId: 'submit-btn-modal', msgId: 'success-msg-modal', location: 'פופאפ מכפתור ראשי',
     onSuccess: openOnboardingQuiz,
   });
 
@@ -254,28 +254,28 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({
-              location: 'Onboarding Quiz',
+              'מקור הפנייה': 'שאלון התאמה',
               // Links this quiz submission back to the original lead
               // submission (same lead_id) and repeats the contact details
               // directly here too, so the quiz answers are immediately
               // readable without having to cross-reference two Formspree
               // entries by hand.
-              lead_id: currentLead ? currentLead.leadId : null,
-              lead_name: currentLead ? currentLead.name : null,
-              lead_phone: currentLead ? currentLead.phone : null,
-              lead_age: currentLead ? currentLead.age : null,
-              lead_source: currentLead ? currentLead.location : null,
-              process_type: formData.get('q1_process'),
-              life_status: statusValue,
-              goals: goals.join(' | '),
-              investing_experience: formData.get('q4_experience'),
-              what_tried_so_far: formData.get('q5_tried'),
-              checking_account_status: formData.get('q6_balance'),
-              total_savings: formData.get('q7_savings'),
-              monthly_savings: formData.get('q8_monthly_savings'),
-              importance_1_to_5: formData.get('q9_importance'),
-              date: now.toLocaleDateString('he-IL'),
-              time: now.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' }),
+              'מזהה ליד': currentLead ? currentLead.leadId : null,
+              'שם הליד': currentLead ? currentLead.name : null,
+              'טלפון הליד': currentLead ? currentLead.phone : null,
+              'גיל הליד': currentLead ? currentLead.age : null,
+              'מקור הליד': currentLead ? currentLead.location : null,
+              'סוג התהליך המבוקש': formData.get('q1_process'),
+              'מצב חיים': statusValue,
+              'מטרות': goals.join(' | '),
+              'ניסיון בהשקעות': formData.get('q4_experience'),
+              'מה כבר ניסו לעשות': formData.get('q5_tried'),
+              'מצב עו״ש': formData.get('q6_balance'),
+              'סך חסכונות': formData.get('q7_savings'),
+              'חיסכון חודשי': formData.get('q8_monthly_savings'),
+              'רמת חשיבות (1-5)': formData.get('q9_importance'),
+              'תאריך': now.toLocaleDateString('he-IL'),
+              'שעה': now.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' }),
             }),
           });
         } catch (err) {
