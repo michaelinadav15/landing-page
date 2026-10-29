@@ -535,6 +535,170 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) { /* ignore corrupt/unavailable storage */ }
   }
 
+  /* ===== QUOTE CAROUSEL — one quote at a time, looping infinitely in both
+     directions via the arrow buttons or a left/right swipe. ===== */
+  const quoteSlides = [
+    {
+      img: 'assets/quotes/buffett.png', w: 500, h: 798, alt: 'וורן באפט',
+      text: '"אם לא תמצא דרך להרוויח כסף בזמן שאתה ישן, תעבוד עד יומך האחרון."',
+      name: 'וורן באפט',
+      scale: 1.25, // his source illustration has more empty padding around
+        // him than Kiyosaki/Gates, so at the same box size he renders smaller
+    },
+    {
+      img: 'assets/quotes/kiyosaki.png', w: 500, h: 508, alt: 'רוברט קיוסאקי',
+      text: '"הסיבה העיקרית שאנשים נאבקים כלכלית היא שהם בילו שנים בבית הספר אבל לא למדו דבר על כסף. הם לומדים לעבוד בשביל כסף... אבל מעולם לא לומדים איך לגרום לכסף לעבוד בשבילם."',
+      name: 'רוברט קיוסאקי',
+      scale: 1.12,
+      textOffsetTop: 10, // nudges his longer quote down slightly within the bubble
+    },
+    {
+      img: 'assets/quotes/gates.png', w: 500, h: 875, alt: 'ביל גייטס',
+      text: '"אם אתה נולד עני זו לא אשמתך, אבל אם אתה מת עני, זו אשמתך."',
+      name: 'ביל גייטס',
+      scale: 1.07,
+    },
+  ];
+
+  const quoteCard = document.getElementById('quote-carousel-card');
+  const quotePortraitWrap = document.getElementById('quote-carousel-portrait-wrap');
+  const quoteText = document.getElementById('quote-carousel-text');
+  const quoteName = document.getElementById('quote-carousel-name');
+  const quotePrevBtn = document.getElementById('quote-nav-prev');
+  const quoteNextBtn = document.getElementById('quote-nav-next');
+
+  if (quoteCard && quotePortraitWrap && quoteText && quoteName && quotePrevBtn && quoteNextBtn) {
+    // All three portraits are permanently mounted in the DOM (see
+    // quote-card-portrait-wrap in index.html) and switching between them is
+    // just toggling which one has .active — never a src swap. A src swap
+    // depends on the browser decoding the new image in time, and on a
+    // slower phone that decode can lag behind the toss animation, leaving
+    // the old portrait visible for a frame after the content "changed".
+    const quotePortraits = Array.from(
+      quotePortraitWrap.querySelectorAll('.quote-card-portrait')
+    );
+
+    let quoteIndex = 0;
+
+    function renderQuote() {
+      const slide = quoteSlides[quoteIndex];
+      quotePortraits.forEach((img, i) => {
+        img.classList.toggle('active', i === quoteIndex);
+      });
+      quoteText.style.marginTop = slide.textOffsetTop ? `${slide.textOffsetTop}px` : '0';
+      quoteText.textContent = slide.text;
+      quoteName.textContent = slide.name;
+    }
+
+    // Measures the REAL rendered height of every quote (not a guessed pixel
+    // value) at the bubble's current width, and fixes the bubble to the
+    // tallest one (Kiyosaki's) — short quotes then center vertically inside
+    // it via align-items on .quote-bubble, instead of leaving dead space.
+    function syncQuoteBubbleHeight() {
+      const bubble = quoteCard.querySelector('.quote-bubble');
+      if (!bubble) return;
+      const probe = bubble.cloneNode(true);
+      probe.style.position = 'absolute';
+      probe.style.visibility = 'hidden';
+      probe.style.pointerEvents = 'none';
+      probe.style.height = 'auto';
+      probe.style.width = bubble.offsetWidth + 'px'; // offsetWidth ignores the
+        // scroll-reveal entrance transform (scale 0.82 before it's scrolled
+        // into view), unlike getBoundingClientRect, so this measures the
+        // card's real final width instead of a shrunk one
+      document.body.appendChild(probe);
+      const probeText = probe.querySelector('.quote-card-text');
+      let maxHeight = 0;
+      quoteSlides.forEach(slide => {
+        probeText.textContent = slide.text;
+        maxHeight = Math.max(maxHeight, probe.scrollHeight);
+      });
+      document.body.removeChild(probe);
+      bubble.style.height = maxHeight + 'px';
+    }
+
+    syncQuoteBubbleHeight();
+
+    // Re-measure once the real Heebo font has finished loading — text
+    // measured with a fallback font can wrap differently, throwing the
+    // height off by a line.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncQuoteBubbleHeight);
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(syncQuoteBubbleHeight, 150);
+    });
+
+    let quoteAnimating = false;
+
+    function goToQuote(delta) {
+      if (quoteAnimating) return;
+      quoteAnimating = true;
+      const dir = delta > 0 ? 'forward' : 'backward';
+      const outClass = `quote-toss-out-${dir}`;
+      const inClass = `quote-toss-in-${dir}`;
+
+      const swap = () => {
+        quoteIndex = (quoteIndex + delta + quoteSlides.length) % quoteSlides.length;
+        renderQuote();
+        quoteCard.classList.remove(outClass);
+        quoteCard.classList.add(inClass);
+        // Force a reflow so the browser registers the off-screen starting
+        // position before the class removal below transitions it back.
+        void quoteCard.offsetWidth;
+        quoteCard.classList.remove(inClass);
+        quoteAnimating = false;
+      };
+
+      // Wait for the actual end of the "out" transform transition (not a
+      // hardcoded timer) before swapping content — on a slower phone a fixed
+      // setTimeout can fire a frame or two before the fade-out has visually
+      // finished, so the old portrait is still partly visible at the exact
+      // moment the image is swapped, reading as a flash of the old quote.
+      let settled = false;
+      const onTransitionEnd = (e) => {
+        if (e.target !== quoteCard || e.propertyName !== 'transform') return;
+        settled = true;
+        quoteCard.removeEventListener('transitionend', onTransitionEnd);
+        swap();
+      };
+      quoteCard.addEventListener('transitionend', onTransitionEnd);
+      // Safety fallback in case transitionend doesn't fire (e.g. the tab was
+      // backgrounded mid-animation), so the carousel never gets stuck.
+      setTimeout(() => {
+        if (settled) return;
+        quoteCard.removeEventListener('transitionend', onTransitionEnd);
+        swap();
+      }, 400);
+
+      quoteCard.classList.add(outClass);
+    }
+
+    quotePrevBtn.addEventListener('click', () => goToQuote(-1));
+    quoteNextBtn.addEventListener('click', () => goToQuote(1));
+
+    // Swipe right = next quote, swipe left = previous quote.
+    let quoteTouchStartX = null;
+    quoteCard.addEventListener('touchstart', (e) => {
+      quoteTouchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    quoteCard.addEventListener('touchend', (e) => {
+      if (quoteTouchStartX === null) return;
+      const deltaX = e.changedTouches[0].clientX - quoteTouchStartX;
+      quoteTouchStartX = null;
+      const SWIPE_THRESHOLD = 40;
+      if (deltaX > SWIPE_THRESHOLD) {
+        goToQuote(-1);
+      } else if (deltaX < -SWIPE_THRESHOLD) {
+        goToQuote(1);
+      }
+    }, { passive: true });
+  }
+
   /* ===== DEV PREVIEW SHORTCUT — visit the page with #preview-quiz in the URL
      to open the onboarding quiz instantly, with no need to submit a form or
      use DevTools. Harmless to leave in; nobody will type this by accident. ===== */
