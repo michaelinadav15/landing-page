@@ -2554,6 +2554,98 @@ body {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
 
+/* ===== VIDEO TESTIMONIALS — 4 across on desktop, 2 across on mobile.
+   Thumbnails are YouTube's own static image (no player loads until the
+   viewer taps one), which is then swapped for a real embedded iframe. ===== */
+.video-testimonials-section {
+  background-color: var(--bg-main);
+  padding: 0 0 48px;
+}
+
+.video-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.video-testimonial-card {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+
+.video-testimonial-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-testimonial-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--blue-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.video-testimonial-card:hover .video-testimonial-play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-testimonial-play svg {
+  margin-right: -2px;
+}
+
+.video-testimonial-name {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.video-testimonial-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .video-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .video-testimonial-play {
+    width: 44px;
+    height: 44px;
+  }
+
+  .video-testimonial-name {
+    font-size: 0.78rem;
+  }
+}
+
 .feedback-headline {
   font-size: 1rem;
   margin: 0 auto;

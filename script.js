@@ -363,6 +363,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ===== VIDEO TESTIMONIALS — click a thumbnail to swap it for a real
+     YouTube embed (so no player/iframe loads until the viewer asks for it). ===== */
+  document.querySelectorAll('.video-testimonial-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const videoId = card.dataset.videoId;
+      if (!videoId) return;
+      card.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" title="סרטון המלצה" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    }, { once: true });
+  });
+
   /* ===== 5. SCROLL-REVEAL — subtle one-time fade+rise as sections enter the viewport ===== */
   const revealEls = document.querySelectorAll('.reveal-on-scroll');
   if (revealEls.length && 'IntersectionObserver' in window) {
