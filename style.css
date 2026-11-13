@@ -3379,7 +3379,7 @@ html.a11y-reading-guide-on .a11y-reading-guide {
      card's white frame, so a too-thin frame makes the rounded corner look
      clipped. Give these specific photos a bit more white padding. */
   .feedback-frame .collage-card.frame-lg {
-    padding: 6px;
+    padding: 4.5px;
   }
 
   /* The real culprit for "no gaps in feedback": .collage-card.a1/.a2/.a3
